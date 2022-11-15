@@ -5,22 +5,12 @@
   "keywords": [],
   "main": "index.js",
   "dependencies": {
-    "babel-core": "6.25.0",
-    "babel-jest": "20.0.3",
-    "babel-preset-es2015": "6.24.1",
-    "babel-preset-react": "6.24.1",
-    "jest": "20.0.4",
-    "react": "15.5.3",
-    "react-addons-test-utils": "15.6.0",
-    "react-test-renderer": "15.6.1"
-  },
-  "devDependencies": {
-    "react-scripts": "1.0.0"
+    "axios": "^1.1.3"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "jest --watchAll"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
   }
 }
