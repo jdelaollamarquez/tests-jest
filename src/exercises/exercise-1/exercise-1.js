@@ -3,7 +3,11 @@ compruebe que pertenece a una comunidad autónoma (lista de ciudades).
 Si no se recibe uno de los parámetros, se deberá volver false */
 
 const isInCommunity = (city, community) => {
-  return community?.includes(city);
+  const isInCluded = community?.includes(city);
+  if (isInCluded) {
+    return isInCluded;
+  }
+  throw new Error("City are not in the community");
 };
 
 module.exports = isInCommunity;

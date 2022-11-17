@@ -1,12 +1,6 @@
-// Tenemos que crear una función que cree una promesa que devuelva un objeto
-// como el descrito abajo del enunciado
-
-const user = { name: "Blob", surname: "Foo" };
-
-const getUser = () => {
-  return new Promise((resolve) => {
-    resolve(user);
-  });
+const getAverage = (notes) => {
+  const average = notes.reduce((acum, curr) => acum + curr, 0);
+  return average / notes?.length;
 };
 
-module.exports = { getUser, user };
+module.exports = getAverage;
