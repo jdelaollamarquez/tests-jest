@@ -3,7 +3,7 @@
 
 const user = { name: "Blob", surname: "Foo", type: "user" };
 
-test("", async () => {
+test("Mock functions", async () => {
   const getUser = jest
     .fn()
     .mockImplementationOnce(() => user)
