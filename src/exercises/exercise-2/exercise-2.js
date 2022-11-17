@@ -1,7 +1,5 @@
 const getAverage = (notes) => {
-  const average = notes.reduce((curr, acum) => {
-    return (acum += curr);
-  }, 0);
+  const average = notes.reduce((acum, curr) => acum + curr, 0);
   return average / notes?.length;
 };
 

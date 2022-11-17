@@ -3,9 +3,12 @@
 
 const user = { name: "Blob", surname: "Foo" };
 
-const getUser = () => {
-  return new Promise((resolve) => {
-    resolve(user);
+const getUser = (name) => {
+  return new Promise((resolve, reject) => {
+    if (name === user.name) {
+      resolve(user);
+    }
+    reject("No se ha encontrado ese usuario");
   });
 };
 
