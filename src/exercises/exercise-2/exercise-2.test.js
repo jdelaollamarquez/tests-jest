@@ -41,18 +41,24 @@ describe("People tests", () => {
     usersWithNotes = await getUsersWithNotes();
   });
 
-  test("Exists name", () => {
+  test("User name exists in exam users list", () => {
+    //OPCION 1: comprobamos si la lista de usuarios creada con mockImplementation contiene a Miguel Llano Benitez
     expect(users).toContain(`${name} ${surname}`);
+
+    //OPCIONM2: Filtramos la lista de usuarios por los apellidos Llano Benitez
     const usersFilteredBySurname = users.filter((u) => u.includes(surname));
+    // De esa lista, esperamos que alguno coincida con Miguel Llano Benitez
     usersFilteredBySurname.forEach((user) =>
       expect(user).toMatch(`${name} ${surname}`)
     );
   });
-  test("Get approved note from user", () => {
+  test("Did the user pass the exam?", () => {
+    //Obtenemos los value (nota) de los elementos del listado de notas por alumno cuyo alumno coincida con Miguel.
     const notes = usersWithNotes
       .filter((u) => u.name.includes(`${name} ${surname}`))
       .map((user) => user.value);
     const averageNote = getAverage(notes);
+    // Comprobamos si la nota media de todas las obtenidas en un aprobado
     expect(averageNote).toBeGreaterThan(5);
   });
 });

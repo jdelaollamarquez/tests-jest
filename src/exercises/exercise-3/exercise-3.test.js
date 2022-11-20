@@ -9,6 +9,7 @@ test("Mock functions", async () => {
     .mockImplementationOnce(() => user)
     .mockImplementationOnce((value) => ({ ...user, type: value }));
 
+    //Actualizará el objeto user con el type pasado por parámetro
   let userRequested = await getUser();
   expect(userRequested.type).toStrictEqual("user");
   userRequested = await getUser("admin");

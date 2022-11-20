@@ -3,12 +3,12 @@
 
 const { getUser, user } = require("./exercise-4");
 
-test("1- Check getUser returned value", async () => {
+test("Option 1- Check getUser returned value (await)", async () => {
   const userRequested = await getUser("Blob");
   expect(userRequested).toEqual(user);
 });
 
-test("2- Check getUser returned value", () => {
+test("Option 2- Check getUser returned value (then)", () => {
   getUser("Blob").then((userRequested) => expect(userRequested).toEqual(user));
 });
 

@@ -1,5 +1,6 @@
 // 1º - Tenemos que comprobar si Valencia pertenece a Andalucía
 // 2º - Tenemos que comprobar si Granada pertenece a Andalucía
+//
 
 const isInCommunity = require("./exercise-1");
 
@@ -15,7 +16,7 @@ const andaluciaCities = [
 ];
 
 test("Check Valencia is in Andalucia", () => {
-  const cityToCheck = "Valencia";
+  const cityToCheck = "Valencia"; // No está en la lista -> ERROR
 
   expect(() => isInCommunity(cityToCheck, andaluciaCities)).toThrow(Error);
   expect(() => isInCommunity(cityToCheck, andaluciaCities)).toThrow(
@@ -24,12 +25,12 @@ test("Check Valencia is in Andalucia", () => {
 });
 
 test("Check Granada is in Andalucia", () => {
-  const cityToCheck = "Granada";
+  const cityToCheck = "Granada"; // Está en la lista
 
   expect(isInCommunity(cityToCheck, andaluciaCities)).toBeTruthy();
 });
 
-test("Check there are no cities", () => {
+test("Check there is no community param", () => {
   const cityToCheck = "Granada";
 
   expect(() => isInCommunity(cityToCheck)).toThrow(Error);
@@ -38,9 +39,9 @@ test("Check there are no cities", () => {
   );
 });
 
-test("Check there is no city to check", () => {
-  expect(() => isInCommunity(undefined, andaluciaCities)).toThrow(Error);
-  expect(() => isInCommunity(undefined, andaluciaCities)).toThrow(
+test("Check there is no city param", () => {
+  expect(() => isInCommunity(andaluciaCities)).toThrow(Error);
+  expect(() => isInCommunity(andaluciaCities)).toThrow(
     "City are not in the community"
   );
 });
